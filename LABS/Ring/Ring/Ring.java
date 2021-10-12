@@ -3,7 +3,6 @@ package Ring;
 import java.util.AbstractQueue;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Arrays;
 // Here you are to implement a queue as a circular array. As we saw in class
 // this is a very efficient implementation. We will tie this class into the
 // Java collection framework by extending AbstractQueue<T>. Thus,
@@ -19,8 +18,13 @@ public class Ring<T> extends AbstractQueue<T>
         @Override
         public boolean hasNext()
         {
+            //System.out.println(counter);
+            if(isEmpty()) return false;
             if(counter == -1) return false;
-            if(arr[counter] != null) return true;
+            if(counter > arr.length - 1) counter = 0;
+            if(arr[counter] != null){
+                return true;
+            }
             return false;
         }
 
@@ -29,12 +33,8 @@ public class Ring<T> extends AbstractQueue<T>
         {
             @SuppressWarnings("unchecked")
             T result = (T) arr[counter];
-            if(counter == rear){ counter = -1; }
-            else if(counter == arr.length - 1){
-                counter = 0;
-            }else{
-                counter++;
-            }
+            if(counter == rear) counter = -1;
+            else counter++;
             return result;
         }
     }
@@ -43,12 +43,18 @@ public class Ring<T> extends AbstractQueue<T>
     private Object[] arr;
     private int front, rear, size;
 
+    public void getArray(){
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        
+    }
     // Builds an empty Ring with the default capacity.
     public Ring()
     {
         arr = new Object[DEFAULT_CAPACITY];
         front = 0;
-        rear = 1;
+        rear = 0;
         size = 0;
 
     }
@@ -60,7 +66,7 @@ public class Ring<T> extends AbstractQueue<T>
         if(capacity < 2) throw new IllegalArgumentException();
         arr = new Object[capacity];
         front = 0;
-        rear = 1;
+        rear = 0;
         size = 0;
 
     }
@@ -73,7 +79,7 @@ public class Ring<T> extends AbstractQueue<T>
         if(cCap < 2) throw new IllegalArgumentException();
         arr = new Object[cCap];
         front = 0;
-        rear = 1;
+        rear = 0;
         size = 0;
         Iterator<T> it = c.iterator();
         while(it.hasNext()){
@@ -115,43 +121,38 @@ public class Ring<T> extends AbstractQueue<T>
     {
         if(t == null) throw new NullPointerException();
         if(isEmpty()){
-            arr[front] = t;
-            size++;
-            return true;
-        }
-        if(arr[rear] == null){
             arr[rear] = t;
             size++;
             return true;
         }
+        
         expand();
         if(rear == arr.length - 1){
             arr[0] = t;
             rear = 0;
-         }else{
-            arr[rear + 1] = t;
+        }else{
             rear++;
-         }
+            arr[rear] = t;
+            
+        }
         size++;
         return true;
     }
 
     public void expand(){
-        if(size == capacity()){
-            if(front < rear){
-                arr = Arrays.copyOf(arr, arr.length * 2);
-            }else{
-                Object[] temp = new Object[arr.length * 2];
-                int index = 0;
-                Iterator<T> it = this.iterator();
-                while(it.hasNext()){
-                    temp[index] = it.next();
-                    index++;
-                }
-                arr = temp;
-                front = 0;
-                rear = index;
+        if(size == arr.length){
+            Object[] temp = new Object[arr.length * 2];
+            int index = 0;
+            Iterator<T> it = this.iterator();
+
+            while(it.hasNext()){
+                temp[index] = it.next();
+                //System.out.println(index);
+                index++;
             }
+            arr = temp;
+            front = 0;
+            rear = index - 1;
         }
     }
 
@@ -162,17 +163,15 @@ public class Ring<T> extends AbstractQueue<T>
     {
         
         if(isEmpty()) return null;
-        if(arr[front] == null){
-            @SuppressWarnings("unchecked")
-            T result = (T) arr[rear];
-            arr[rear] = null;
-            size--;
-            return result;
-        }
+
         @SuppressWarnings("unchecked")
         T result = (T) arr[front];
-        if(front == arr.length - 1) front = 0;
-        else front++;
+        arr[front] = null;
+        if(front != rear){
+            if(front == arr.length - 1) front = 0;
+            else front++;
+        }
+        
         size--;
         return result;
 
@@ -183,16 +182,9 @@ public class Ring<T> extends AbstractQueue<T>
     public T peek()
     {
         if(isEmpty()) return null;
-        
-        if(arr[front] == null){
-            @SuppressWarnings("unchecked")
-            T res = (T) arr[rear];
-            return res;
-        }else{
-            @SuppressWarnings("unchecked")
-            T res = (T) arr[front];
-            return res;
-        }
+        @SuppressWarnings("unchecked")
+        T res = (T) arr[front];
+        return res;
     }
 
     // Add more members as needed.
