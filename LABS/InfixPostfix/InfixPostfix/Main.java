@@ -1,4 +1,4 @@
-
+package InfixPostfix;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
@@ -19,12 +19,11 @@ public class Main {
                 exValue = exp(ex);
                 if(exValue == -1) {
                     postFix.append(ex);
-                    
-                }else if(exValue == 0){
+                }else if(exValue == 4){
                     stack.push(ex);
-                }else if(exValue == 1){
+                }else if(exValue == 3){
 
-                    while(!stack.isEmpty() && exp(stack.peek()) != 0){
+                    while(exp(stack.peek()) != 4){
                         //System.out.println(stack.peek());
                         postFix.append(stack.pop());
                     }
@@ -32,7 +31,7 @@ public class Main {
                     //System.out.println(stack);
                     stack.pop();
                 }else{
-                    while(!stack.isEmpty() && exValue >= exp(stack.peek()) && exp(stack.peek()) != 0){
+                    while(!stack.isEmpty() && exValue <= exp(stack.peek()) && exp(stack.peek()) != 4){
                         postFix.append(stack.pop());
                     }
                     stack.push(ex);
@@ -42,9 +41,6 @@ public class Main {
                 //System.out.println("tempStack: " + tempStack);
             }
             while(!stack.isEmpty()){
-                if(stack.peek() == '('){
-                    System.out.println("Invalid");
-                }
                 postFix.append(stack.pop());
             }
             System.out.println(postFix.toString());
@@ -56,16 +52,16 @@ public class Main {
    }
     static int exp(char c) {
         switch(c) {
-            case '(': return 0;
-            case ')': return 1;
+            case '(': return 4;
+            case ')': return 3;
+            
             case '^': return 2;
             case '*':
             case '/':
-                      return 3;
             case '%':
+                      return 1;
             case '+':
-            case '-':
-                      return 4;
+            case '-': return 0;
             
             default: return -1;
             
