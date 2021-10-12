@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "LABS/Calculator_two",
-        "LABS/InfixPostfix"
+        "LABS/InfixPostfix",
+        "LABS/Ring"
     ]
 }
