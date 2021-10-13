@@ -32,6 +32,7 @@ public class Main
                 }
             }
         }
+        sc.close();
         return result;
     }
 

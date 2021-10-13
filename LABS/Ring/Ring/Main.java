@@ -1,5 +1,4 @@
 package Ring;
-import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -40,6 +39,7 @@ public class Main
             System.out.println(a.next());
         }
         ring.getArray();
+        cin.close();
         /*
         while(!ring.isEmpty())
         {

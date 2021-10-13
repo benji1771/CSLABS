@@ -16,6 +16,7 @@ public class Main {
         
         allPermutations(first, temp, second);
         System.out.println(answer);
+        scanner.close();
     }
     static String answer = "no";
     static int index = 0;
