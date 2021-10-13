@@ -3,6 +3,7 @@
         "LABS/Calculator_two",
         "LABS/InfixPostfix",
         "LABS/Ring",
-        "LABS/permutations"
+        "LABS/permutations",
+        "LABS/CommonItems"
     ]
 }
