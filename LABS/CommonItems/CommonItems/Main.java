@@ -35,6 +35,7 @@ public class Main
             }
         }
         out.println(str.toString().trim());
+        sc.close();
     }
 
     // Add methods here if needed

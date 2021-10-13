@@ -41,6 +41,6 @@ public class PhotoLineups {
          name = scnr.next();
       }
       allPermutations(permList, nameList);
-
+      scnr.close();
    }
 }

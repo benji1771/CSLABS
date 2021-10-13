@@ -47,6 +47,7 @@ public class Main
             }
             System.out.println(result.peek().toString());
         }
+        scanner.close();
     }
     static int exp(String c) {
         switch(c) {
