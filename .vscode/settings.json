@@ -4,6 +4,7 @@
         "LABS/InfixPostfix",
         "LABS/Ring",
         "LABS/permutations",
-        "LABS/CommonItems"
+        "LABS/CommonItems",
+        "LABS/SolveEquation"
     ]
 }
