@@ -14,7 +14,7 @@ public class Main
         StringBuilder sb = new StringBuilder();
         ArrayDeque<String> deck = new ArrayDeque<>();
         ArrayDeque<String> tempo = new ArrayDeque<>();
-        while(str.hasNextLine()){
+        while(str.hasNext()){
             n = str.next();
             if(exp(n) == -1)
             {
