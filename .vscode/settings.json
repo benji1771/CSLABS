@@ -5,6 +5,7 @@
         "LABS/Ring",
         "LABS/permutations",
         "LABS/CommonItems",
-        "LABS/SolveEquation"
+        "LABS/SolveEquation",
+        "LABS/PointsOnLine"
     ]
 }
