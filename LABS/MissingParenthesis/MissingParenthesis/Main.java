@@ -1,54 +1,42 @@
 package MissingParenthesis;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
 {
-    
+    //1 + 2 ) * 3 - 4 ) * 5 - 6 ) ) )
+    //( 1 + 2 ) * ( 3 - 4 ) * ( 5 - 6 ) ) )
+
     public static String fixExpression(String brokenExpression)
     {
+        Scanner str = new Scanner(brokenExpression);
+        String n;
         StringBuilder sb = new StringBuilder();
         ArrayDeque<String> deck = new ArrayDeque<>();
-        ArrayDeque<String> op = new ArrayDeque<>();
-        ArrayList<String> expr = new ArrayList<>(Arrays.asList(brokenExpression.split(" ")));
-        int temp;
-        String text;
-        boolean open = true;
-        for(int i = expr.size() - 1; i >= 0; i--){
-            text = expr.get(i);
-            temp = exp(text);
-            
-            if(temp == 2){
-                deck.push(text);
-            }else if(temp == -1){
-                op.push(text);
-            }else{
-                if(open){
-                    open = false;
-                    op.push(text);
-                }else{
-                    sb.insert(0, deck.pop());
-                    while(!op.isEmpty()){
-                        sb.insert(0, op.removeLast());
-                    }
-                    sb.insert(0, "(");
-                    sb.insert(0, text);
-                    open = true;
+        ArrayDeque<String> tempo = new ArrayDeque<>();
+        while(str.hasNextLine()){
+            n = str.next();
+            if(exp(n) == -1)
+            {
+                deck.push(n);
+            }else if(exp(n) == 2)
+            {
+                sb.append("( ");
+                for(int i = 0; i < 3; i++)
+                {
+                    tempo.push(deck.pop() + " ");
                 }
+                for(int i = 0; i < 3; i++){
+                    sb.append(tempo.pop());
+                }
+                sb.append(")");
+                
+                deck.push(sb.toString());
+                sb.delete(0, sb.length());
+
             }
-        } 
-        sb.insert(0, deck.pop());
-        while(!op.isEmpty()){
-            sb.insert(0, op.removeLast());
         }
-        sb.insert(0, "(");
-        while(!deck.isEmpty()){
-            sb.append(deck.pop());
-            sb.insert(0, "(");
-        }
-        return sb.toString();
+        return deck.pop();
         // Add your code here
     }
 
@@ -57,13 +45,10 @@ public class Main
     static int exp(String c) {
         switch(c) {
             case ")": return 2;
-
             case "*":
             case "/":
             case "+":
             case "-":
-                      return 0;
-            
             default: return -1;
             
         }
