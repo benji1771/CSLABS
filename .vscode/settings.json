@@ -6,6 +6,7 @@
         "LABS/permutations",
         "LABS/CommonItems",
         "LABS/SolveEquation",
-        "LABS/PointsOnLine"
+        "LABS/PointsOnLine",
+        "LABS/MissingParenthesis"
     ]
 }
