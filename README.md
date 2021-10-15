@@ -1,2 +1,2 @@
 # CSLABS
-Zybook Labs
+Algorithm
