@@ -9,6 +9,7 @@
         "LABS/PointsOnLine",
         "LABS/MissingParenthesis",
         "LABS/testLab",
-        "LABS/DescendingOrder"
+        "LABS/DescendingOrder",
+        "LABS/SortingUserIds"
     ]
 }
