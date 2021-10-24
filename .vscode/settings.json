@@ -8,6 +8,7 @@
         "LABS/SolveEquation",
         "LABS/PointsOnLine",
         "LABS/MissingParenthesis",
-        "LABS/testLab"
+        "LABS/testLab",
+        "LABS/DescendingOrder"
     ]
 }
