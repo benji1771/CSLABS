@@ -11,6 +11,7 @@
         "LABS/testLab",
         "LABS/DescendingOrder",
         "LABS/SortingUserIds",
-        "LABS/MergeSortList"
+        "LABS/MergeSortList",
+        "LABS/MergeSortListTwo"
     ]
 }
