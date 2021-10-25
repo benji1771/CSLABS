@@ -10,6 +10,7 @@
         "LABS/MissingParenthesis",
         "LABS/testLab",
         "LABS/DescendingOrder",
-        "LABS/SortingUserIds"
+        "LABS/SortingUserIds",
+        "LABS/MergeSortList"
     ]
 }
