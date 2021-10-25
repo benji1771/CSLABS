@@ -13,6 +13,7 @@
         "LABS/SortingUserIds",
         "LABS/MergeSortList",
         "LABS/MergeSortListTwo",
-        "LABS/SortingPolygons"
+        "LABS/SortingPolygons",
+        "LABS/LeastSignificantRadix"
     ]
 }
