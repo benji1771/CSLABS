@@ -1,6 +1,8 @@
 package LeastSignificantRadix;
 import java.util.Arrays;
 
+import Alphabet;
+
 /******************************************************************************
  *
  *  A data type for alphabets, for use with string-processing code
