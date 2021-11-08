@@ -24,8 +24,8 @@ public class LeastSignificantRadix
             int[] count = new int[R+1];
             for(int i = 0; i < N; i++)
                 count[alphabet.toIndex(a.get(i).charAt(d)) + 1]++;
-            for(int r = 0; r < R; r++)
-                count[r+1] += count[r];
+            for(int r = 1; r <= R; r++)
+                count[r] += count[r-1];
             for(int i = 0; i < N; i++)
                 aux[count[alphabet.toIndex(a.get(i).charAt(d))]++] = a.get(i);
             for(int i = 0; i < N; i++)
