@@ -17,6 +17,7 @@
         "LABS/LeastSignificantRadix",
         "LABS/MSDsort",
         "LABS/Filter",
-        "LABS/VersionString"
+        "LABS/VersionString",
+        "LABS/WhatIsIt"
     ]
 }
