@@ -16,6 +16,7 @@
         "LABS/SortingPolygons",
         "LABS/LeastSignificantRadix",
         "LABS/MSDsort",
-        "LABS/Filter"
+        "LABS/Filter",
+        "LABS/VersionString"
     ]
 }
