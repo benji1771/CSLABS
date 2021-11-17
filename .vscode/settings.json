@@ -15,6 +15,7 @@
         "LABS/MergeSortListTwo",
         "LABS/SortingPolygons",
         "LABS/LeastSignificantRadix",
-        "LABS/MSDsort"
+        "LABS/MSDsort",
+        "LABS/Filter"
     ]
 }
