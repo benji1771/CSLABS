@@ -18,6 +18,7 @@
         "LABS/MSDsort",
         "LABS/Filter",
         "LABS/VersionString",
-        "LABS/WhatIsIt"
+        "LABS/WhatIsIt",
+        "LABS/EventSimulation"
     ]
 }
