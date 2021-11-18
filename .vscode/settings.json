@@ -19,6 +19,7 @@
         "LABS/Filter",
         "LABS/VersionString",
         "LABS/WhatIsIt",
-        "LABS/EventSimulation"
+        "LABS/EventSimulation",
+        "LABS/SmallSums"
     ]
 }
