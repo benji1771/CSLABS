@@ -18,9 +18,10 @@ public class Main
             if(pt.length == 3)
                 points.insert(new Point3D(dt[0], dt[1], dt[2]));
         }
-
-        while(!points.isEmpty()){
+        int i = 0;
+        while(!points.isEmpty() && i < n){
             System.out.println(points.delMin().toString());
+            i++;
         }
     }
 
