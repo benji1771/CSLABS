@@ -20,6 +20,8 @@
         "LABS/VersionString",
         "LABS/WhatIsIt",
         "LABS/EventSimulation",
-        "LABS/SmallSums"
+        "LABS/SmallSums",
+        "LABS/StudentGrades",
+        "LABS/ListIntersection"
     ]
 }
