@@ -1,10 +1,10 @@
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class StudentGrades {
-    public static void main(String[] args){
-        
-            Scanner scnr = new Scanner(System.in);
+       
+   public static void main (String[] args) {
+      Scanner scnr = new Scanner(System.in);
             String studentName;
             double studentGrade;
             
@@ -25,5 +25,6 @@ public class StudentGrades {
             System.out.println(studentName + "'s original grade: " + studentGrades.get(studentName));
             studentGrades.replace(studentName, studentGrades.get(studentName), studentGrade);
             System.out.println(studentName + "'s new grade: " + studentGrades.get(studentName));
-    }
+      
+   }
 }
