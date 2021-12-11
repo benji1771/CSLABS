@@ -22,6 +22,8 @@
         "LABS/EventSimulation",
         "LABS/SmallSums",
         "LABS/StudentGrades",
-        "LABS/ListIntersection"
+        "LABS/ListIntersection",
+        "LABS/GameSim",
+        "LABS/ListWords"
     ]
 }
